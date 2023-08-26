@@ -1,0 +1,13 @@
+
+/* Init variable css */
+
+:root {
+    --bg-color: ;
+}
+
+/* Format pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
