@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,39 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <!-- Favicon - Logo -->
     <link rel="shortcut icon" href="./assets/images/favicon_io/favicon.ico" type="image/x-icon">
-    
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
+
 <body>
     <!-- Bootstrap - JS -->
     <script src="./assets/js/bootstrap.js"></script>
     <script src="./assets/js/bootstrap.bundle.js"></script>
-    <div class="container">
-        
+    <div class="gamePage">
+        <header id="gamePage__header" class="header container-fluid shadow row">
+            <a href="./index.html" class="col-2 text-center">
+                <img src="./assets/images/logoGame.png" alt="logoGame" class="header__logo--img">
+            </a>
+            <p class="col-10 d-flex align-items-center fs-4 fw-medium fst-italic px-0 m-0">Màn chinh phục thử thách</p>
+        </header>
+        <main class="container challenge">
+            <div class="board">
+                <div class="board__question row">
+                    <p>Câu hỏi số 1:</p>
+                    <p><b>"</b>Học cái tốt thì khó, ví như người ta leo núi, phải vất vả, khó nhọc mới lên đến đỉnh. Học
+                        cái xấu thì dễ, như ở trên đỉnh núi trượt chân một cái là nhào xuống vực sâu<b>"</b></p>
+                    <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>
+                </div>
+                <div class="board__answer row">
+                    <button class="btn btn--ans btn--ans-false">Đáp án 1</button>
+                    <button class="btn btn--ans">Đáp án 2</button>
+                    <button class="btn btn--ans ">Đáp án 3</button>
+                    <button class="btn btn--ans">Đáp án 4</button>
+                </div>
+            </div>
+        </main>
     </div>
+
 </body>
+
 </html>
