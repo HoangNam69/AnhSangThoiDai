@@ -11,6 +11,14 @@
     <link rel="shortcut icon" href="./assets/images/favicon_io/favicon.ico" type="image/x-icon">
     <!-- Custom css -->
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+
+    <style>
+        .modal-background {
+          background-image: url('./assets/images/modal.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      </style>
 </head>
 
 <body>
@@ -27,6 +35,22 @@
         <main class="container challenge">
             <div class="board">
                 <div class="board__question row">
+                    <!-- <div class="text-end circle">
+                        <div id="dong-ho" style="color: white;">
+                  
+                        </div>
+                    </div> -->
+
+                    <div class="row justify-content-end">
+                        <div class="col-1">
+                          <div class="circle">
+                            <div class="text-right" id="dong-ho" style="color: white;">
+                  
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
                     <p>Câu hỏi số 1:</p>
                     <p><b>"</b>Học cái tốt thì khó, ví như người ta leo núi, phải vất vả, khó nhọc mới lên đến đỉnh. Học
                         cái xấu thì dễ, như ở trên đỉnh núi trượt chân một cái là nhào xuống vực sâu<b>"</b></p>
@@ -36,7 +60,7 @@
                     <button class="btn btn--ans btn--ans-false">Đáp án 1</button>
                     <button class="btn btn--ans">Đáp án 2</button>
                     <button class="btn btn--ans ">Đáp án 3</button>
-                    <button data-bs-toggle="modal" data-bs-target="#modal__messages" class="btn btn--ans">Đáp án 4</button>
+                    <button data-bs-toggle="modal" data-bs-target="#modal__messages" class="btn btn--ans btn--ans-true">Đáp án 4</button>
                 </div>
             </div>
         </main>
@@ -44,7 +68,7 @@
     <!-- Modal hiển thị thông báo giải thích cho câu trả lời sai -->
     <div id="modal__messages" class="modal fade modal-xl">
         <div class="modal-dialog ">
-            <div class="modal-content">
+            <div class="modal-content modal-background" >
                 <div class="modal-header">
                     <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -59,6 +83,23 @@
             </div>
         </div>
     </div>
+
+    <!-- xử lý đồng hồ đếm ngược -->
+    <script>
+        const countdownElement = document.getElementById("dong-ho");
+        let number = 29;
+    
+        function updateCountdown() {
+          countdownElement.textContent = number;
+          number--;
+    
+          if (number < 0) {
+            clearInterval(countdownInterval);
+            number.textContent = "Hết thời gian!";
+          }
+        }
+        const countdownInterval = setInterval(updateCountdown, 1000);
+      </script>
 </body>
 
 </html>
