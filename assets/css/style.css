@@ -101,6 +101,10 @@ a {
 }
 
 /* Trang chinh phục thử thách */
+.gamePage {
+    position: relative;
+}
+
 #result__announcement--header,
 #gamePage__header {
     position: fixed;
@@ -237,6 +241,7 @@ a {
     color: var(--btn-bg-color-start);
 }
 
+
 /* css cho đồng hồ đếm ngược */
 .circle {
     width: 50px;
@@ -246,10 +251,49 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    }
+}
 
-    .text-right {
+.text-right {
     text-align: right;
     font-size: 27px;
     font-weight: 500;
-    }
+}
+
+.showMessEndCount {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: var(--bg-ans-true);
+    padding: 50px 100px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    display: none;
+}
+
+.showMessEndCount__contents {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btn__close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 4px 10px;
+    background: var(--bg-ans-hover);
+    border-radius: 50%;
+}
+
+.btn__close--icon {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.btn__close:hover {
+    background: var(--text-btn-color);
+    cursor: pointer;
+    box-shadow: 0px 0px 10px black;
+    color: var(--bg-ans-false);
+}
