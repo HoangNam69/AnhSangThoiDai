@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ánh Sáng Thời Đại</title>
+    <!-- Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Bootstrap - CSS -->
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <!-- Favicon - Logo -->
@@ -14,11 +16,11 @@
 
     <style>
         .modal-background {
-          background-image: url('./assets/images/modal.jpg');
-          background-size: cover;
-          background-repeat: no-repeat;
+            background-image: url('./assets/images/modal.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
         }
-      </style>
+    </style>
 </head>
 
 <body>
@@ -34,41 +36,40 @@
         </header>
         <main class="container challenge">
             <div class="board">
-                <div class="board__question row">
-                    <!-- <div class="text-end circle">
-                        <div id="dong-ho" style="color: white;">
-                  
-                        </div>
-                    </div> -->
-
-                    <div class="row justify-content-end">
-                        <div class="col-1">
-                          <div class="circle">
+                <div class="row justify-content-end">
+                    <div class="col-1">
+                        <div class="circle">
                             <div class="text-right" id="dong-ho" style="color: white;">
-                  
+
                             </div>
-                          </div>
                         </div>
-                      </div>
-                    
-                    <p>Câu hỏi số 1:</p>
-                    <p><b>"</b>Học cái tốt thì khó, ví như người ta leo núi, phải vất vả, khó nhọc mới lên đến đỉnh. Học
-                        cái xấu thì dễ, như ở trên đỉnh núi trượt chân một cái là nhào xuống vực sâu<b>"</b></p>
-                    <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>
+                    </div>
+                </div>
+                <div class="board__question row">
+                    <!-- Load câu hỏi tại đây -->
                 </div>
                 <div class="board__answer row">
                     <button class="btn btn--ans btn--ans-false">Đáp án 1</button>
                     <button class="btn btn--ans">Đáp án 2</button>
                     <button class="btn btn--ans ">Đáp án 3</button>
-                    <button data-bs-toggle="modal" data-bs-target="#modal__messages" class="btn btn--ans btn--ans-true">Đáp án 4</button>
+                    <button data-bs-toggle="modal" data-bs-target="#modal__messages"
+                        class="btn btn--ans btn--ans-true">Đáp án 4</button>
                 </div>
             </div>
         </main>
+        <div class="showMessEndCount">
+            <div class="showMessEndCount__contents">
+                Bạn đã hết thời gian làm bài
+            </div>
+            <div class="btn__close">
+                <i class='btn__close--icon bx bx-x'></i>
+            </div>
+        </div>
     </div>
     <!-- Modal hiển thị thông báo giải thích cho câu trả lời sai -->
     <div id="modal__messages" class="modal fade modal-xl">
         <div class="modal-dialog ">
-            <div class="modal-content modal-background" >
+            <div class="modal-content modal-background">
                 <div class="modal-header">
                     <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -84,22 +85,42 @@
         </div>
     </div>
 
+
+
     <!-- xử lý đồng hồ đếm ngược -->
     <script>
         const countdownElement = document.getElementById("dong-ho");
+        var boardQuestion = document.querySelector('.board .board__question')
+
+        var showEndCount = document.querySelector('.showMessEndCount');
+        var iconCloseMessEndCount = document.querySelector('.btn__close');
+
+        // Load dữ liệu câu hỏi vào
+        boardQuestion.innerHTML = `
+       <p>Câu hỏi số 1:</p>
+                    <p><b>"</b>Học cái tốt thì khó, ví như người ta leo núi, phải vất vả, khó nhọc mới lên đến đỉnh. Học
+                        cái xấu thì dễ, như ở trên đỉnh núi trượt chân một cái là nhào xuống vực sâu<b>"</b></p>
+                    <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>`
+
         let number = 29;
-    
+
         function updateCountdown() {
-          countdownElement.textContent = number;
-          number--;
-    
-          if (number < 0) {
-            clearInterval(countdownInterval);
-            number.textContent = "Hết thời gian!";
-          }
+            countdownElement.textContent = number;
+            number--;
+
+            if (number < 0) {
+                clearInterval(countdownInterval);
+                // Xử lý hiển thị thông báo khi hết thời gian hoặc hết câu thử thách
+                showEndCount.style.display = "flex"
+                // Sau khi hết giờ làm bài hoặc hết câu thì hiển thị thông báo tương ứng từng trường hợp và sau đó chuyển qua trang kết quả
+                iconCloseMessEndCount.addEventListener('click', function () {
+                    showEndCount.style.display = "none" // Xử lý tắt thông báo
+                    window.location = "./resultAnnouncement.html" // Chuyển trang
+                })
+            }
         }
         const countdownInterval = setInterval(updateCountdown, 1000);
-      </script>
+    </script>
 </body>
 
 </html>
