@@ -41,43 +41,48 @@
             <div class="board">
                 <div class="row justify-content-end">
                     <div class="col-1">
-                        <div class="circle">
-                            <div class="text-right" id="dong-ho" style="color: white;">
-
+                        <div class="container-fluid d-inline-flex p-0 position-relative">
+                            <div class="circle">
+                                <div class="text-right" id="dong-ho" style="color: white;">
+                                </div>
                             </div>
+                            <a href="./resultAnnouncement.html">
+                                <i class="fa-regular fa-square-check fa-2xl position-absolute bottom-50 end-100 pe-3" title="Kết thúc bài thi và xem kết quả" style="color: #ffffff;"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="board__question row">
 
                     <!-- Load câu hỏi tại đây -->
+                    <a id="reload" href=""><i id="next-question" title="đi tới câu hỏi tiếp theo " class="fa-solid fa-forward fa-2x "></i></a>
                 </div>
-                <div class="board__answer row">
+                <div class="board__answer row ">
 
                 </div>
             </div>
         </main>
-        <div class="showMessEndCount">
-            <div class="showMessEndCount__contents">
-                Bạn đã hết thời gian làm bài
+        <div class="showMessEndCount ">
+            <div class="showMessEndCount__contents ">
+                Bạn đã hết thời gian làm câu trên
             </div>
-            <div class="btn__close">
+            <div class="btn__close ">
                 <i class='btn__close--icon bx bx-x'></i>
             </div>
         </div>
     </div>
     <!-- Modal hiển thị thông báo giải thích cho câu trả lời sai -->
-    <div id="modal__messages" class="modal fade modal-xl">
+    <div id="modal__messages " class="modal fade modal-xl ">
         <div class="modal-dialog ">
-            <div class="modal-content modal-background">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="infor">
+            <div class="modal-content modal-background ">
+                <div class="modal-header ">
+                    <h4 class="modal-title " id="infor ">
                     </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button " class="btn-close " data-bs-dismiss="modal " aria-label="Close "></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body ">
                     <p>
-                        <p class="detail"><b>"</b><b>"</b></p>
+                        <p class="detail "><b>"</b><b>"</b></p>
                         <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>
                     </p>
                 </div>

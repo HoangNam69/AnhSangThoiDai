@@ -11,14 +11,15 @@ const questions = [
       "Kể từ ngày 18/06/1919, Nguyễn Tất Thành quyết định sử dụng tên Nguyễn Ái Quốc trong thời gian ở Pháp cùng sinh hoạt chung với nhóm người gồm các ông Phan Chu Trinh, Phan Văn Trường, Nguyễn Thế Truyền, Nguyễn An Ninh. Nguyễn Tất Thành là người đến gia nhập nhóm sau cùng.",
   },
   {
-    question: "Bác Hồ lấy tên là Nguyễn Ái Quốc từ bao giờ?",
+    question:
+      " UNESCO công nhận Hồ Chí Minh là Danh nhân văn hóa thế giới vào năm nào?",
     answers: [
-      { text: "Ngày 18/6/1919", correct: true },
-      { text: "Ngày 20/8/1921", correct: false },
-      { text: "Ngày 6/12/1920", correct: false },
-      { text: "Ngày 15/12/1912", correct: false },
+      { text: "Năm 1990", correct: true },
+      { text: "Năm 1991", correct: false },
+      { text: "Năm 1987", correct: false },
+      { text: "Năm 1995", correct: false },
     ],
     detail:
-      "Tên này có khi Nguyễn Tất Thành ở Pháp cùng sinh hoạt chung với nhóm người gồm các ông Phan Chu Trinh, Phan Văn Trường, Nguyễn Thế Truyền, Nguyễn An Ninh. Nguyễn Tất Thành là người đến gia nhập nhóm sau cùng.",
+      "Vào năm 1990, nhân kỉ niệm 100 năm ngày sinh, Chủ tịch Hồ Chí Minh đã được tổ chức UNESCO tôn vinh là Danh nhân văn hóa thế giới.",
   },
 ];

@@ -139,6 +139,14 @@ a {
   border-radius: 10px;
   padding: 20px 30px;
   font-size: 20px;
+  position: relative;
+}
+
+#next-question {
+  position: absolute;
+  bottom: 25px;
+  width: 0;
+  right: 100px;
 }
 
 .board__answer {
@@ -153,6 +161,8 @@ a {
   background: var(--btn-bg-color-ans);
   color: var(--btn-color-start);
   font-size: 18px;
+  position: relative;
+  padding-left: 20px;
 }
 
 .board__answer .btn--ans:hover {
@@ -274,6 +284,19 @@ a {
   display: none;
 }
 
+.showMessEndTotalTime {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: var(--bg-ans-true);
+  padding: 50px 100px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  display: none;
+}
+
 .showMessEndCount__contents {
   font-size: 20px;
   font-weight: 700;
@@ -298,4 +321,17 @@ a {
   cursor: pointer;
   box-shadow: 0px 0px 10px black;
   color: var(--bg-ans-false);
+}
+
+.btn--ans i {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.btn--ans i::before {
+  display: inline-block;
+  vertical-align: middle;
 }
