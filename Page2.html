@@ -21,6 +21,9 @@
             background-repeat: no-repeat;
         }
     </style>
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/fontawesome.js"></script>
 </head>
 
 <body>
@@ -46,14 +49,11 @@
                     </div>
                 </div>
                 <div class="board__question row">
+
                     <!-- Load câu hỏi tại đây -->
                 </div>
                 <div class="board__answer row">
-                    <button class="btn btn--ans btn--ans-false">Đáp án 1</button>
-                    <button class="btn btn--ans">Đáp án 2</button>
-                    <button class="btn btn--ans ">Đáp án 3</button>
-                    <button data-bs-toggle="modal" data-bs-target="#modal__messages"
-                        class="btn btn--ans btn--ans-true">Đáp án 4</button>
+
                 </div>
             </div>
         </main>
@@ -71,14 +71,14 @@
         <div class="modal-dialog ">
             <div class="modal-content modal-background">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h4 class="modal-title" id="infor">
+                    </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>
-                    <p><b>"</b>Học cái tốt thì khó, ví như người ta leo núi, phải vất vả, khó nhọc mới lên đến đỉnh. Học
-                        cái xấu thì dễ, như ở trên đỉnh núi trượt chân một cái là nhào xuống vực sâu<b>"</b></p>
-                    <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>
+                        <p class="detail"><b>"</b><b>"</b></p>
+                        <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>
                     </p>
                 </div>
             </div>
@@ -88,38 +88,7 @@
 
 
     <!-- xử lý đồng hồ đếm ngược -->
-    <script>
-        const countdownElement = document.getElementById("dong-ho");
-        var boardQuestion = document.querySelector('.board .board__question')
-
-        var showEndCount = document.querySelector('.showMessEndCount');
-        var iconCloseMessEndCount = document.querySelector('.btn__close');
-
-        // Load dữ liệu câu hỏi vào
-        boardQuestion.innerHTML = `
-       <p>Câu hỏi số 1:</p>
-                    <p><b>"</b>Học cái tốt thì khó, ví như người ta leo núi, phải vất vả, khó nhọc mới lên đến đỉnh. Học
-                        cái xấu thì dễ, như ở trên đỉnh núi trượt chân một cái là nhào xuống vực sâu<b>"</b></p>
-                    <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>`
-
-        let number = 29;
-
-        function updateCountdown() {
-            countdownElement.textContent = number;
-            number--;
-
-            if (number < 0) {
-                clearInterval(countdownInterval);
-                // Xử lý hiển thị thông báo khi hết thời gian hoặc hết câu thử thách
-                showEndCount.style.display = "flex"
-                // Sau khi hết giờ làm bài hoặc hết câu thì hiển thị thông báo tương ứng từng trường hợp và sau đó chuyển qua trang kết quả
-                iconCloseMessEndCount.addEventListener('click', function () {
-                    showEndCount.style.display = "none" // Xử lý tắt thông báo
-                    window.location = "./resultAnnouncement.html" // Chuyển trang
-                })
-            }
-        }
-        const countdownInterval = setInterval(updateCountdown, 1000);
+    <script src="./assets/js/main.js">
     </script>
 </body>
 
