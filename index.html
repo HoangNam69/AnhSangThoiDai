@@ -72,9 +72,40 @@
       </main>
     </div>
     <script>
+<<<<<<< HEAD
       $("#start").on("click", () => {
         localStorage.setItem("correctedAnswer", 0);
         localStorage.setItem("i", 0);
+=======
+      getCount = () => {
+        let count = window.sessionStorage.getItem("count");
+        if (count === null) {
+          return 0;
+        }
+        return count;
+      };
+      getRework = () => {
+        let reworkTime = window.sessionStorage.getItem("rework");
+        if (reworkTime === null) {
+          return [];
+        }
+        return JSON.parse(reworkTime);
+      };
+      updateReworkCount = () => {
+        let count = parseInt(getCount()) + 1;
+        let reworkTime = getRework();
+        reworkTime.push({
+          count: count,
+          score: 0,
+        });
+        window.sessionStorage.setItem("count", count);
+        window.sessionStorage.setItem("rework", JSON.stringify(reworkTime));
+      };
+
+      $("#start").on("click", () => {
+        localStorage.setItem("i", 0);
+        updateReworkCount();
+>>>>>>> final
       });
     </script>
   </body>
