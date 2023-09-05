@@ -17,32 +17,19 @@ shuffle = (answers) => {
 };
 
 // keep track of how many correct answer
-<<<<<<< HEAD
-let correctAnswer = localStorage.getItem("correctedAnswer");
-correctAnswer = parseInt(correctAnswer) || 0;
-
-onCorrectedAnswer = () => {
-  correctAnswer++;
-  localStorage.setItem("correctedAnswer", correctAnswer);
-=======
 let correctAnswer = JSON.parse(window.sessionStorage.getItem("rework"));
 let count = window.sessionStorage.getItem("count");
 
 onCorrectedAnswer = () => {
   correctAnswer[count - 1].score += 1;
   window.sessionStorage.setItem("rework", JSON.stringify(correctAnswer));
->>>>>>> final
 };
 
 // keep track of the question
 let i = Number(localStorage.getItem("i")) || 0;
-<<<<<<< HEAD
-
-=======
 if (i === questions.length - 1) {
   $("#reload").css("display", "none");
 }
->>>>>>> final
 boardQuestion.innerHTML += `
   <p>Câu hỏi số ${i + 1}:</p>
   <p><b>"</b>${questions[i].question}<b>"</b></p>
@@ -57,8 +44,6 @@ for (let i = 0; i < 4; i++) {
 `;
 }
 
-<<<<<<< HEAD
-=======
 // handle timing
 function updateCountdown() {
   countdownElement.textContent = totalTime;
@@ -80,7 +65,6 @@ function updateCountdown() {
 }
 const countdownInterval = setInterval(updateCountdown, 1000);
 
->>>>>>> final
 // track the question answer and detail
 $(".btn").on("click", function () {
   setTimeout(() => {
@@ -98,10 +82,7 @@ $(".btn").on("click", function () {
 const $buttons = $(".btn--ans");
 $buttons.each(function (index, btn) {
   $buttons.on("click", function () {
-<<<<<<< HEAD
-=======
     clearInterval(countdownInterval);
->>>>>>> final
     let correct = shuffledAnswer[$(btn).val()].correct;
     if (correct) {
       $(btn).children().addClass("fa-solid fa-circle-check");
@@ -118,38 +99,6 @@ $buttons.each(function (index, btn) {
     }
   });
 });
-<<<<<<< HEAD
-if (i < questions.length - 1) {
-  i++;
-}
-localStorage.setItem("i", i);
-
-// handle next question view
-$("#reload").on("click", () => {
-  if (i > questions.length - 1) {
-    alert("đây là câu hỏi cuối cùng");
-  } else {
-    window.location.reload();
-  }
-});
-
-// handle timing
-function updateCountdown() {
-  countdownElement.textContent = totalTime;
-  totalTime--;
-  if (totalTime < 0) {
-    clearInterval(countdownInterval);
-    // Xử lý hiển thị thông báo khi hết thời gian hoặc hết câu thử thách
-    showEndCount.style.display = "flex";
-    // Sau khi hết giờ trả lời câu hỏi thì hiển thị thông báo tương ứng từng trường hợp và sau đó chuyển qua câu hỏi tiếp theo
-    iconCloseMessEndCount.addEventListener("click", function () {
-      showEndCount.style.display = "none"; // Xử lý tắt thông báo
-      window.location.reload(); // refresh trang
-    });
-  }
-}
-const countdownInterval = setInterval(updateCountdown, 1000);
-=======
 
 // handle next question view
 $("#reload").on("click", () => {
@@ -159,4 +108,3 @@ $("#reload").on("click", () => {
     window.location.reload();
   }
 });
->>>>>>> final

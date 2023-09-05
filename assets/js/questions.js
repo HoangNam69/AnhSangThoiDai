@@ -22,8 +22,6 @@ const questions = [
     detail:
       "Vào năm 1990, nhân kỉ niệm 100 năm ngày sinh, Chủ tịch Hồ Chí Minh đã được tổ chức UNESCO tôn vinh là Danh nhân văn hóa thế giới.",
   },
-<<<<<<< HEAD
-=======
   {
     question: "Bác Hồ mang tên Nguyễn Tất Thành từ lúc nào?",
     answers: [
@@ -35,5 +33,4 @@ const questions = [
     detail:
       "Năm 1901, cụ Nguyễn Sinh Sắc đậu Phó bảng (Khoa thi Hội năm Tân Sửu). Theo phong tục, nhân dân làng Sen (quê nội của Bác) đã xây dựng căn nhà cho tân Phó bảng Nguyễn Sinh Sắc. Nhân dịp này, cụ Nguyễn Sinh Sắc đã làm lễ “vào làng” cho hai con trai, Nguyễn Sinh Khiêm được đổi tên là Nguyễn Tất Đạt, Nguyễn Sinh Cung được đổi tên là Nguyễn Tất Thành với ước nguyện sự thành đạt sau này của con mình.",
   },
->>>>>>> final
 ];
