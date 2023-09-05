@@ -1,18 +1,6 @@
-<<<<<<< HEAD
-// handle result
-let correctAnswer = localStorage.getItem("correctedAnswer");
-$("#score").text(correctAnswer + "/" + questions.length);
-=======
 var result = document.querySelector(".board__content--body");
 var rework = JSON.parse(sessionStorage.getItem("rework"));
 
-// handle result
-// let correctAnswer = localStorage.getItem("correctedAnswer");
-// $("#score").text(correctAnswer + "/" + questions.length);
-
-// get rework count
-// let reworkCount = sessionStorage.getItem("rework");
-// $("#rework").text(reworkCount);
 for (let i = 0; i < rework.length; i++) {
   result.innerHTML += `
   <div class="row board__content--show my-3 fw-semibold">
@@ -26,4 +14,3 @@ for (let i = 0; i < rework.length; i++) {
   
    </div>            `;
 }
->>>>>>> final
